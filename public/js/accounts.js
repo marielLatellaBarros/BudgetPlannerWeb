@@ -1,5 +1,6 @@
 function createNewAccount(iban, name) {
     let url = BACKEND_URL + '/BudgetPlanner/api/accounts';
+    //http://localhost:8080/BudgetPlannerAPI_war/api/accounts
     let data = {'iban': iban, 'name': name};
 
     return fetch(url,
@@ -13,9 +14,11 @@ function createNewAccount(iban, name) {
         })
         .then((response) => {
             if (response.status === 201) {
+                console.log(response.status + " " + response.text());
                 return response;
             } else {
-                throw response;
+                console.log(response.status + " " + response.text());
+                //throw response;
             }
         });
 }

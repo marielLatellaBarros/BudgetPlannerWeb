@@ -81,8 +81,8 @@
     function addAccount() {
         let name = $('#name').val();
         let iban = $('#iban').val();
-        var $errorMessage = $('#error');
-        var $message = $('#message');
+        const $errorMessage = $('#error');
+        const $message = $('#message');
         createNewAccount(iban, name).then((response) => {
             $message.text("Account successfully created!");
             $errorMessage.hide();
@@ -97,7 +97,7 @@
         );
     }
 
-    init()
+    init();
 </script>
 </body>
 </html>
