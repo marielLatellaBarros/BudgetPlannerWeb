@@ -12,15 +12,23 @@ function createNewAccount(iban, name) {
                 'Content-Type': 'application/json'
             }
         })
-        .then((response) => {
-            if (response.status === 201) {
-                console.log(response.status + " " + response.text());
+        //TODO: error does not get thrown
+        .then(response => {
+            if(response.status === 201) {
+                console.log("Account created!");
                 return response;
             } else {
-                console.log(response.status + " " + response.text());
-                //throw response;
+                 throw response;
             }
-        });
+        })
+    //TODO: how to read error message in console and still throw it to view?
+            // } else if (response.status === 400) {
+            //     response.text().then(function (text) {
+            //         console.log("An error occurred: " + response.status + " " + text);
+            //         throw text;
+            //     });
+            //}
+        //});
 }
 
 
