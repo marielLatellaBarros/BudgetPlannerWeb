@@ -83,13 +83,15 @@
         let iban = $('#iban').val();
         const $errorMessage = $('#error');
         const $message = $('#message');
+
         createNewAccount(iban, name).then(() => {
             $message.text("Account successfully created!");
             $errorMessage.hide();
             $message.show();
-        }).catch((exception) => {
-                exception.json().then((error) => {
-                    $errorMessage.text(error.message);
+            })
+            .catch((exception) => {
+                exception.text().then((error) => {
+                    $errorMessage.text(error);
                     $errorMessage.show();
                     $message.hide();
                 });
