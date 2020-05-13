@@ -85,7 +85,7 @@
         const $message = $('#message');
 
         createNewAccount(iban, name).then(() => {
-            $message.text("Account successfully created!");
+            $message.text("Account successfully created/ updated!");
             $errorMessage.hide();
             $message.show();
             })
