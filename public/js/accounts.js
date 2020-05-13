@@ -17,6 +17,9 @@ function createNewAccount(iban, name) {
             if(response.status === 201) {
                 console.log("Account created!");
                 return response;
+            } else if(response.status === 204) {
+                console.log("Account updated!");
+                return response;
             } else {
                  throw response;
             }
